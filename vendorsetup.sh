@@ -16,9 +16,9 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-        export TW_DEFAULT_LANGUAGE="en"
+	export TW_DEFAULT_LANGUAGE="en"
 	export LC_ALL="C"
-        export OF_AB_DEVICE=1
+	export OF_AB_DEVICE=1
 	export ALLOW_MISSING_DEPENDENCIES=true
 	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	export OF_USE_NEW_MAGISKBOOT=1
