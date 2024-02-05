@@ -93,8 +93,8 @@ PRODUCT_PACKAGES += \
     mtk_plpath_utils.recovery
 
 # Otacert
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/miui_releasekey
+#PRODUCT_EXTRA_RECOVERY_KEYS += \
+#    $(DEVICE_PATH)/security/miui_releasekey
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
