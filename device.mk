@@ -36,12 +36,14 @@ AB_OTA_PARTITIONS += \
     lk \
     preloader \
     odm \
+    odm_dlkm \
     product \
     system \
     system_ext \
     vbmeta_system \
     vbemeta_vendor \
     vendor \
+    vendor_dlkm \
     vendor_boot
 
 PRODUCT_PACKAGES += \
@@ -72,13 +74,28 @@ PRODUCT_PACKAGES += \
     
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.keymaster@4.1 \
     libkeymaster4 \
     libpuresoftkeymasterdevice
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
- 
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so
+
+# Keystore2
+PRODUCT_PACKAGES += \
+    android.system.keystore2
+
+# Mtk plpath utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils \
+    mtk_plpath_utils.recovery
+
+# Otacert
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(DEVICE_PATH)/security/miui_releasekey
+
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
@@ -86,13 +103,20 @@ TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_LIBRESETPROP := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
+TW_EXCLUDE_APEX := true
 TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_FUSE_EXFAT := true
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TARGET_USES_MKE2FS := true
 TW_DEVICE_VERSION := Redmi Note 10 Pro 5G | Anya1014CN
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone4/temp"
 TW_NO_SCREEN_BLANK := true
