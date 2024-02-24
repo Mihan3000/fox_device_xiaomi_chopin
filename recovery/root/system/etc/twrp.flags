@@ -10,10 +10,10 @@
 # Boot
 /boot			    emmc		/dev/block/platform/bootdevice/by-name/boot				 flags=display="BOOT";backup=1;flashimg=1;slotselect
 /dtbo			    emmc		/dev/block/platform/bootdevice/by-name/dtbo		         flags=display="DTBO";backup=1;flashimg=1
-/vbmeta			    emmc		/dev/block/platform/bootdevice/by-name/vbmeta		     flags=display="VBMETA";flashimg=1
+/vbmeta			    emmc		/dev/block/platform/bootdevice/by-name/vbmeta		     flags=display="VBMETA";flashimg=1;slotselect
 /vbmeta_system		emmc		/dev/block/platform/bootdevice/by-name/vbmeta_system	 flags=display="VBMETA SYSTEM";flashimg=1;slotselect
 /vbmeta_vendor		emmc		/dev/block/platform/bootdevice/by-name/vbmeta_vendor	 flags=display="VBMETA VENDOR";flashimg=1;slotselect
-/logo			    emmc		/dev/block/platform/bootdevice/by-name/logo				 flags=display="LOGO";backup=1
+/logo			    emmc		/dev/block/platform/bootdevice/by-name/logo				 flags=display="LOGO";backup=1;flashimg=1
 /misc			    emmc		/dev/block/platform/bootdevice/by-name/misc				 flags=display="MISC";backup=1;flashimg=1
 
 # Persistent Firmware & Properties
@@ -22,22 +22,22 @@
 
 # Firmware partitions
 /para			    emmc		/dev/block/platform/bootdevice/by-name/para				 flags=display="PARA"
-/protect_f		    ext4		/dev/block/platform/bootdevice/by-name/protect1		     flags=display="PROTECT_F"
-/protect_s		    ext4		/dev/block/platform/bootdevice/by-name/protect2		     flags=display="PROTECT_S"
-/nvdata				ext4		/dev/block/platform/bootdevice/by-name/nvdata			 flags=display="NVDATA"
-/nvcfg				ext4		/dev/block/platform/bootdevice/by-name/nvcfg			 flags=display="NVCFG"
+/protect_f		    ext4		/dev/block/platform/bootdevice/by-name/protect1		     flags=display="PROTECT_F";backup=1
+/protect_s		    ext4		/dev/block/platform/bootdevice/by-name/protect2		     flags=display="PROTECT_S";backup=1
+/nvdata				ext4		/dev/block/platform/bootdevice/by-name/nvdata			 flags=display="NVDATA";backup=1;flashimg=1
+/nvcfg				ext4		/dev/block/platform/bootdevice/by-name/nvcfg			 flags=display="NVCFG";backup=1;flashimg=1
 /boot_para		    emmc		/dev/block/platform/bootdevice/by-name/boot_para		 flags=display="BOOT_PARA"
 /audio_dsp			emmc		/dev/block/platform/bootdevice/by-name/audio_dsp		 flags=display="AUDIO_DSP"
 /otp                emmc        /dev/block/by-name/otp                                   flags=display="otp"
 /persistent			emmc		/dev/block/platform/bootdevice/by-name/frp				 flags=display="FRP"
-/nvram				emmc		/dev/block/platform/bootdevice/by-name/nvram		     flags=display="NVRAM"
-/proinfo			emmc		/dev/block/platform/bootdevice/by-name/proinfo			 flags=display="PROINFO"
+/nvram				emmc		/dev/block/platform/bootdevice/by-name/nvram		     flags=display="NVRAM";backup=1;flashimg=1
+/proinfo			emmc		/dev/block/platform/bootdevice/by-name/proinfo			 flags=display="PROINFO";backup=1
 /bootloader			emmc		/dev/block/platform/bootdevice/by-name/lk				 flags=display="BOOTLOADER"
 /bootloader2		emmc		/dev/block/platform/bootdevice/by-name/lk2				 flags=display="BOOTLOADER2"
 /gz1				emmc		/dev/block/platform/bootdevice/by-name/gz1				 flags=display="GZ1"
 /gz2				emmc		/dev/block/platform/bootdevice/by-name/gz2				 flags=display="GZ2"
 /expdb				emmc		/dev/block/platform/bootdevice/by-name/expdb		 	 flags=display="EXPDB"
-/seccfg				emmc		/dev/block/platform/bootdevice/by-name/seccfg			 flags=display="SECCFG"
+/seccfg				emmc		/dev/block/platform/bootdevice/by-name/seccfg			 flags=display="SECCFG";backup=1
 /tee1				emmc		/dev/block/platform/bootdevice/by-name/tee1				 flags=display="TEE1"
 /tee2				emmc		/dev/block/platform/bootdevice/by-name/tee2				 flags=display="TEE2"
 /mcupm_1    	    emmc        /dev/block/platform/bootdevice/by-name/mcupm_1       	 flags=display="MCUPM_1"
