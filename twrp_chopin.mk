@@ -31,7 +31,7 @@ $(call inherit-product, device/xiaomi/chopin/device.mk)
 PRODUCT_DEVICE := chopin
 PRODUCT_NAME := twrp_chopin
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi Note 10 Pro 5G
+PRODUCT_MODEL := Redmi Note 10 Pro
 PRODUCT_MANUFACTURER := xiaomi
 
 # HACK: Set vendor patch level
