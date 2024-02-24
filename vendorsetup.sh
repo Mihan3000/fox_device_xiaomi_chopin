@@ -65,7 +65,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# R11
 	export FOX_R11=2
 	export FOX_VERSION="12.1"
-	export FOX_VARIANT=MI
+	export FOX_VARIANT=MIUI
 	export OF_PATCH_AVB20=1
 	export OF_MAINTAINER="Mihan3000"
 	export FOX_ADVANCED_SECURITY=1
