@@ -15,4 +15,3 @@ on post-fs-data && property:ro.boot.tee_type=1
     chown system system /data/vendor/thh
     write /proc/bootprof "init miteelog"
     start miteelog
-
